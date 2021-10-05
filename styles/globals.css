@@ -1,16 +1,117 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+
+@layer base {
+  :root {
+    background-color: rgb(1, 1, 1);
+  }
+
+  html,
+  body,
+  #__next {
+    @apply min-h-full;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Open Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: linear-gradient(to left top, rgb(1, 1, 1), rgb(21, 21, 35));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-bold uppercase;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+
+  a:hover {
+    @apply no-underline;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@tailwind components;
+@tailwind utilities;
+
+.timeline-card-content {
+  padding: 1rem;
 }
 
-* {
-  box-sizing: border-box;
+.swiper {
+  width: 100% !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  user-select: none;
+}
+
+.swiper-slide {
+  background-position: center !important;
+  background-size: cover !important;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.swiper-slide img {
+  display: block !important;
+  width: 100% !important;
+}
+
+.faq::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 25px;
+  background: #4e44ce;
+  border-radius: 9999px;
+  height: 10px;
+  width: 10px;
+}
+
+.wallet-adapter-modal-container .wallet-adapter-modal-wrapper,
+.wallet-adapter-dropdown .wallet-adapter-dropdown-list {
+  background: #20134e;
+}
+.wallet-adapter-modal-container .wallet-adapter-button,
+.wallet-adapter-dropdown .wallet-adapter-dropdown-list-item {
+  background-color: #4e44ce;
+}
+
+.hero_half {
+  flex: 0 0 auto;
+}
+
+.df-btn {
+  background-color: #4e44ce;
+}
+.df-btn:not([disabled]):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15) 0 0);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(25, 33, 49, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
 }

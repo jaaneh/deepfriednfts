@@ -4,17 +4,51 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/open-sans": "^4.5.0",
+    "@headlessui/react": "^1.4.1",
+    "@project-serum/anchor": "^0.16.1",
+    "@solana/spl-token": "^0.1.8",
+    "@solana/wallet-adapter-base": "^0.6.0",
+    "@solana/wallet-adapter-react": "^0.12.2",
+    "@solana/wallet-adapter-react-ui": "^0.4.2",
+    "@solana/wallet-adapter-wallets": "^0.10.0",
+    "@solana/web3.js": "^1.29.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "clsx": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "daisyui": "^1.14.1",
+    "framer-motion": "^4.1.17",
+    "moment": "^2.29.1",
     "next": "11.1.2",
+    "next-seo": "^4.28.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-chrono": "^1.12.1",
+    "react-countdown": "^2.3.2",
+    "react-dom": "17.0.2",
+    "react-hot-toast": "^2.1.1",
+    "react-icons": "^4.2.0",
+    "swiper": "^7.0.7"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "@types/gtag.js": "^0.0.7",
+    "@types/node": "^16.10.1",
+    "@types/react": "^17.0.24",
+    "@types/swiper": "^5.4.3",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "autoprefixer": "^10.3.5",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "next-transpile-modules": "^8.0.0",
+    "postcss": "^8.3.8",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.15",
+    "typescript": "^4.4.3"
   }
 }
