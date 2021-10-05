@@ -1,12 +1,11 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
-
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+
 import ActiveLink from '@components/ActiveLink'
 import Button from '@components/Button'
-
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 const nav: Array<{ title: string; href: string }> = [
   {
