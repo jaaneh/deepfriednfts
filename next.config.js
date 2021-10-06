@@ -42,7 +42,7 @@ module.exports = withTM({
     return [
       {
         source: '/discord',
-        destination: 'https://discord.gg/',
+        destination: 'https://discord.gg/tuVSC9gwAB',
         permanent: true
       },
       {
