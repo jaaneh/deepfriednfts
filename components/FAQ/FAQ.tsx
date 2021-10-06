@@ -16,10 +16,7 @@ const FAQ = (): JSX.Element => {
             <h3 className='flex items-center mb-1 text-lg tracking-tight normal-case faq'>
               {question.title}
             </h3>
-            <p
-              className='text-gray-400'
-              dangerouslySetInnerHTML={{ __html: question.content }}
-            />
+            <p dangerouslySetInnerHTML={{ __html: question.content }} />
           </div>
         ))}
       </section>

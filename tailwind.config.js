@@ -31,6 +31,9 @@ module.exports = {
             color: theme('colors.gray.400'),
             maxWidth: 'none',
 
+            p: {
+              color: theme('colors.gray.400')
+            },
             a: {
               color: theme('colors.gray.300'),
               '&:hover': {

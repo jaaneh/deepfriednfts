@@ -4,11 +4,19 @@
     "cardDetailedText": "We will be releasing 2,222 on Oct 14th at 13:00 UTC. There will be no presale or early access minting as we want our distribution to be fair and straight forward. Once the sale goes live it will stay open until sold out."
   },
   {
+    "cardTitle": "Discord OG",
+    "cardDetailedText": "The first 100 members to join our Discord server will receive an OG role as a thank-you. This gives access to OG's only chat where we will hold exclusive giveaways and more!"
+  },
+  {
     "cardTitle": "Secondary Market",
     "cardDetailedText": "Deep Fried NFTs will be available on secondary marketplaces shortly after selling out. We'll be approaching markets like Solanart, SolSea, Magic Eden, and DigitalEyes to discuss which location will best fit our project."
   },
   {
     "cardTitle": "Charity Donation",
     "cardDetailedText": "We'll donate 10% of the revenue to Feeding America once the 2,222 Deep Fried NFTs have been minted. A portion of the secondary market sales will also be donated to Feeding America."
+  },
+  {
+    "cardTitle": "Community Give Back",
+    "cardDetailedText": "We'll be holding Solana raffles where we will give away 22 SOL to Deep Fried NFT owners."
   }
 ]

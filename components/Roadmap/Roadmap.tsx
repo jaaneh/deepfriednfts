@@ -14,6 +14,7 @@ const Roadmap = (): JSX.Element => {
         items={roadmap}
         mode={size.width > 1024 ? 'VERTICAL_ALTERNATING' : 'VERTICAL'}
         cardWidth={500}
+        cardHeight={100}
         useReadMore={false}
         hideControls={true}
         theme={{
