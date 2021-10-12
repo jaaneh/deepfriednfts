@@ -57,7 +57,7 @@ const HomePage = (): JSX.Element => {
                 <div className='flex flex-col justify-center w-full pt-6'>
                   <div className='mb-2 text-lg'>
                     <p>
-                      Date: <span className='font-bold'>Oct 14th - 13:00 UTC</span>
+                      Date: <span className='font-bold'>Oct 18th - 13:00 UTC</span>
                     </p>
                     <p>
                       Price: <span className='font-bold'>1 SOL</span>
