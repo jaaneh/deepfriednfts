@@ -57,6 +57,8 @@ const Minter = (props: HomeProps) => {
   }
 
   const onMint = async () => {
+    if (!isActive) return
+
     try {
       setIsMinting(true)
       if (wallet && candyMachine?.program) {
@@ -116,7 +118,6 @@ const Minter = (props: HomeProps) => {
         <>
           <div className='flex flex-col items-center mb-2'>
             <p className='mb-1'>
-              Sold:{' '}
               <span className='font-bold'>
                 {itemsRedeemed} / {itemsAvailable}
               </span>

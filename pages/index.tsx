@@ -1,23 +1,23 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-// import * as anchor from '@project-serum/anchor'
+import * as anchor from '@project-serum/anchor'
 
-// import Minter from '@components/Minter'
+import Minter from '@components/Minter'
 import Roadmap from '@components/Roadmap'
 import FAQ from '@components/FAQ'
 import ImageSwiper from '@components/ImageSwiper'
-import Button from '@components/Button'
+// import Button from '@components/Button'
 
-// const treasury = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_TREASURY_ADDRESS!)
-// const config = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!)
-// const candyMachineId = new anchor.web3.PublicKey(
-//   process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
-// )
-// const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!
-// const connection = new anchor.web3.Connection(rpcHost)
-// const startDateSeed = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10)
-// const txTimeout = 30000
+const treasury = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_TREASURY_ADDRESS!)
+const config = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!)
+const candyMachineId = new anchor.web3.PublicKey(
+  process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
+)
+const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!
+const connection = new anchor.web3.Connection(rpcHost)
+const startDateSeed = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10)
+const txTimeout = 30000
 
 const HomePage = (): JSX.Element => {
   return (
@@ -63,17 +63,17 @@ const HomePage = (): JSX.Element => {
                       Price: <span className='font-bold'>1 SOL</span>
                     </p>
                   </div>
-                  {/* <Minter
+                  <Minter
                     candyMachineId={candyMachineId}
                     config={config}
                     connection={connection}
                     startDate={startDateSeed}
                     treasury={treasury}
                     txTimeout={txTimeout}
-                  /> */}
-                  <Button variant='primary' isActive fullWidth disabled>
+                  />
+                  {/* <Button variant='primary' isActive fullWidth disabled>
                     Coming Soon
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>
