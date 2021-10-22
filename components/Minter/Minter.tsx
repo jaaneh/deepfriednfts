@@ -28,8 +28,8 @@ const Minter = (props: HomeProps) => {
   const [isSoldOut, setIsSoldOut] = useState(false)
   const [isMinting, setIsMinting] = useState(false)
 
-  const [itemsAvailable, setItemsAvailable] = useState(0)
-  const [itemsRedeemed, setItemsRedeemed] = useState(0)
+  // const [itemsAvailable, setItemsAvailable] = useState(0)
+  // const [itemsRedeemed, setItemsRedeemed] = useState(0)
 
   const [startDate, setStartDate] = useState(new Date(props.startDate))
 
@@ -40,15 +40,20 @@ const Minter = (props: HomeProps) => {
     ;(async () => {
       if (!wallet) return
 
-      const { candyMachine, goLiveDate, itemsAvailable, itemsRemaining, itemsRedeemed } =
-        await getCandyMachineState(
-          wallet as anchor.Wallet,
-          props.candyMachineId,
-          props.connection
-        )
+      const {
+        candyMachine,
+        goLiveDate,
+        itemsRemaining
+        // itemsAvailable,
+        // itemsRedeemed
+      } = await getCandyMachineState(
+        wallet as anchor.Wallet,
+        props.candyMachineId,
+        props.connection
+      )
 
-      setItemsAvailable(itemsAvailable)
-      setItemsRedeemed(itemsRedeemed)
+      // setItemsAvailable(itemsAvailable)
+      // setItemsRedeemed(itemsRedeemed)
 
       setIsSoldOut(itemsRemaining === 0)
       setStartDate(goLiveDate)
@@ -116,7 +121,7 @@ const Minter = (props: HomeProps) => {
         <WalletMultiButton style={{ width: '100%' }} />
       ) : (
         <>
-          <div className='flex flex-col items-center mb-2'>
+          {/* <div className='flex flex-col items-center mb-2'>
             <p className='mb-1'>
               <span className='font-bold'>
                 {itemsRedeemed} / {itemsAvailable}
@@ -127,7 +132,7 @@ const Minter = (props: HomeProps) => {
               value={itemsRedeemed}
               max={itemsAvailable}
             ></progress>
-          </div>
+          </div> */}
           <Button
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
