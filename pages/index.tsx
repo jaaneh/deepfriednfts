@@ -48,8 +48,8 @@ const HomePage = (): JSX.Element => {
                       curves, tiers, or reservations.
                     </p>
                     <p>
-                      Once the sale goes live it will stay open until sold out. There will
-                      be no pre-sale or reservations so everyone has a fair chance of
+                      Once the sale goes live on October 31st it will stay open until sold
+                      out. There will be no reservations so everyone has a fair chance of
                       minting a Deep Fried NFT once they are live.
                     </p>
                   </div>
@@ -57,10 +57,10 @@ const HomePage = (): JSX.Element => {
                 <div className='flex flex-col justify-center w-full pt-6'>
                   <div className='mb-2 text-lg'>
                     <p>
-                      Date: <span className='font-bold'>Oct 18th - 13:00 UTC</span>
+                      Date: <span className='font-bold'>Oct 31st - 13:00 UTC</span>
                     </p>
                     <p>
-                      Price: <span className='font-bold'>1 SOL</span>
+                      Price: <span className='font-bold'>0.5 SOL</span>
                     </p>
                   </div>
                   <Minter
