@@ -161,7 +161,7 @@ const Minter = (props: HomeProps) => {
 const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
   return (
     <span>
-      {hours} hours, {minutes} minutes, {seconds} seconds
+      {days} days, {hours} hours, {minutes} minutes, {seconds} seconds
     </span>
   )
 }
