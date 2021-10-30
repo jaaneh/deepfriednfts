@@ -23,13 +23,13 @@ export interface HomeProps {
   txTimeout: number
 }
 
-const Minter = (props: HomeProps) => {
+const Minter = (props: HomeProps): JSX.Element => {
   const [isActive, setIsActive] = useState(false)
   const [isSoldOut, setIsSoldOut] = useState(false)
   const [isMinting, setIsMinting] = useState(false)
 
-  // const [itemsAvailable, setItemsAvailable] = useState(0)
-  // const [itemsRedeemed, setItemsRedeemed] = useState(0)
+  const [itemsAvailable, setItemsAvailable] = useState(0)
+  const [itemsRedeemed, setItemsRedeemed] = useState(0)
 
   const [startDate, setStartDate] = useState(new Date(props.startDate))
 
@@ -40,20 +40,15 @@ const Minter = (props: HomeProps) => {
     ;(async () => {
       if (!wallet) return
 
-      const {
-        candyMachine,
-        goLiveDate,
-        itemsRemaining
-        // itemsAvailable,
-        // itemsRedeemed
-      } = await getCandyMachineState(
-        wallet as anchor.Wallet,
-        props.candyMachineId,
-        props.connection
-      )
+      const { candyMachine, goLiveDate, itemsRemaining, itemsAvailable, itemsRedeemed } =
+        await getCandyMachineState(
+          wallet as anchor.Wallet,
+          props.candyMachineId,
+          props.connection
+        )
 
-      // setItemsAvailable(itemsAvailable)
-      // setItemsRedeemed(itemsRedeemed)
+      setItemsAvailable(itemsAvailable)
+      setItemsRedeemed(itemsRedeemed)
 
       setIsSoldOut(itemsRemaining === 0)
       setStartDate(goLiveDate)
@@ -88,21 +83,22 @@ const Minter = (props: HomeProps) => {
           toast.error('Mint failed! Please try again!')
         }
       }
-    } catch (error: any) {
+    } catch (error) {
       let message = error.msg || 'Minting failed! Please try again!'
       if (!error.msg) {
         if (error.message.indexOf('0x138')) {
         } else if (error.message.indexOf('0x137')) {
-          message = `SOLD OUT!`
+          message = 'SOLD OUT!'
         } else if (error.message.indexOf('0x135')) {
-          message = `Insufficient funds to mint. Please fund your wallet.`
+          message = 'Insufficient funds to mint. Please fund your wallet.'
         }
       } else {
         if (error.code === 311) {
-          message = `SOLD OUT!`
+          message = 'SOLD OUT!'
           setIsSoldOut(true)
         } else if (error.code === 312) {
-          message = `Minting period hasn't started yet.`
+          // eslint-disable-next-line quotes
+          message = "Minting period hasn't started yet."
         }
       }
 
@@ -121,7 +117,7 @@ const Minter = (props: HomeProps) => {
         <WalletMultiButton style={{ width: '100%' }} />
       ) : (
         <>
-          {/* <div className='flex flex-col items-center mb-2'>
+          <div className='flex flex-col items-center mb-2'>
             <p className='mb-1'>
               <span className='font-bold'>
                 {itemsRedeemed} / {itemsAvailable}
@@ -132,7 +128,7 @@ const Minter = (props: HomeProps) => {
               value={itemsRedeemed}
               max={itemsAvailable}
             ></progress>
-          </div> */}
+          </div>
           <Button
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
@@ -163,10 +159,17 @@ const Minter = (props: HomeProps) => {
   )
 }
 
-const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
+type IRenderer = {
+  days: number | string
+  hours: number | string
+  minutes: number | string
+  seconds: number | string
+}
+
+const renderCounter = ({ hours, minutes, seconds }: IRenderer) => {
   return (
     <span>
-      {days} days, {hours} hours, {minutes} minutes, {seconds} seconds
+      {hours} hours, {minutes} minutes, {seconds} seconds
     </span>
   )
 }

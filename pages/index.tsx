@@ -9,14 +9,12 @@ import FAQ from '@components/FAQ'
 import ImageSwiper from '@components/ImageSwiper'
 // import Button from '@components/Button'
 
-const treasury = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_TREASURY_ADDRESS!)
-const config = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!)
-const candyMachineId = new anchor.web3.PublicKey(
-  process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
-)
-const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!
+const treasury = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_TREASURY_ADDRESS)
+const config = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG)
+const candyMachineId = new anchor.web3.PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID)
+const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST
 const connection = new anchor.web3.Connection(rpcHost)
-const startDateSeed = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10)
+const startDateSeed = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE, 10)
 const txTimeout = 30000
 
 const HomePage = (): JSX.Element => {
